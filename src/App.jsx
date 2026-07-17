@@ -5,6 +5,7 @@ import Login from './components/pages/Login';
 import Dashboard from './components/pages/Dashboard';
 import ClientesContratos from './components/pages/ClientesContratos';
 import Comercial from './components/pages/Comercial';
+import Marketing from './components/pages/Marketing';
 import ContratosDetalhado from './components/pages/ContratosDetalhado';
 import Financeiro from './components/pages/Financeiro';
 import Operacional from './components/pages/Operacional';
@@ -29,6 +30,7 @@ function AppRoutes() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/clientes" element={<ClientesContratos />} />
         <Route path="/comercial" element={<Comercial />} />
+        <Route path="/marketing" element={<Marketing />} />
         <Route path="/contratos" element={<ContratosDetalhado />} />
         <Route path="/financeiro" element={<Financeiro />} />
         <Route path="/operacional" element={<Operacional />} />

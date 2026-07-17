@@ -33,7 +33,7 @@ export default function Operacional() {
             <BarChart data={incidenciasPorDia}>
               <XAxis dataKey="dia" stroke="#6b7280" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis hide />
-              <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid #263248', borderRadius: 8 }} />
+              <Tooltip contentStyle={{ background: '#212121', border: '1px solid #2c2c2c', borderRadius: 8 }} />
               <Bar dataKey="valor" radius={[4, 4, 0, 0]}>
                 {incidenciasPorDia.map((entry) => (
                   <Cell key={entry.dia} fill="#22c55e" />

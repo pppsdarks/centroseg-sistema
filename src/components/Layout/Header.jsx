@@ -2,14 +2,23 @@ import logo from '../../assets/logo.svg';
 import { unidades } from '../../data/mockData';
 import { useAuth } from '../../context/AuthContext';
 
-export default function Header() {
-  const { unidade, setUnidade, user } = useAuth();
+const ROLE_LABEL = {
+  padrao: 'OPERACIONAL',
+  financeiro: 'FINANCEIRO',
+  socio: 'SÓCIO',
+};
+
+export default function Header({ onMenuClick }) {
+  const { unidade, setUnidade, user, role } = useAuth();
 
   return (
     <header className="app-header">
       <div className="app-header-brand">
+        <button type="button" className="menu-btn" onClick={onMenuClick} aria-label="Abrir menu">
+          ☰
+        </button>
         <img src={logo} alt="CentroSeg" height={22} />
-        <span className="app-header-badge">OPERACIONAL</span>
+        <span className="app-header-badge">{ROLE_LABEL[role]}</span>
       </div>
 
       <div className="app-header-units">

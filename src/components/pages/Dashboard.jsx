@@ -1,10 +1,13 @@
 import { LineChart, Line, ResponsiveContainer, XAxis, YAxis, Tooltip, PieChart, Pie, Cell } from 'recharts';
 import MetricCard from '../common/MetricCard';
-import { dashboardData, graficosData } from '../../data/mockData';
+import { dashboardData, graficosData, clientesResumo } from '../../data/mockData';
+import { useAuth } from '../../context/AuthContext';
 
 const CATEGORY_COLORS = ['#22c55e', '#fbbf24', '#ef4444'];
 
 export default function Dashboard() {
+  const { isSocio } = useAuth();
+
   return (
     <div>
       <div className="page-header">
@@ -13,7 +16,11 @@ export default function Dashboard() {
       </div>
 
       <div className="grid grid-4" style={{ marginBottom: 20 }}>
-        <MetricCard title="Faturamento Mensal" value={`R$ ${dashboardData.faturamento_mensal}`} percentage={dashboardData.percentual_faturamento} />
+        {isSocio ? (
+          <MetricCard title="Faturamento Mensal" value={`R$ ${dashboardData.faturamento_mensal}`} percentage={dashboardData.percentual_faturamento} />
+        ) : (
+          <MetricCard title="Contratos Ativos" value={clientesResumo.contratos_ativos} note={clientesResumo.contratos_ativos_delta} />
+        )}
         <MetricCard title="Clientes Ativos" value={dashboardData.clientes_ativos} percentage={dashboardData.percentual_clientes} />
         <MetricCard title="Chamados em Aberto" value={dashboardData.chamados_abertos} percentage={dashboardData.percentual_chamados} />
         <MetricCard title="NPS Operacional" value={dashboardData.nps} percentage={dashboardData.percentual_nps} />
@@ -27,7 +34,7 @@ export default function Dashboard() {
               <XAxis dataKey="mes" stroke="#6b7280" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis hide />
               <Tooltip
-                contentStyle={{ background: '#1e293b', border: '1px solid #263248', borderRadius: 8 }}
+                contentStyle={{ background: '#212121', border: '1px solid #2c2c2c', borderRadius: 8 }}
                 labelStyle={{ color: '#fff' }}
               />
               <Line type="monotone" dataKey="valor" stroke="#22c55e" strokeWidth={3} dot={{ r: 4, fill: '#22c55e' }} />

@@ -39,7 +39,7 @@ export default function Comercial() {
             <BarChart data={comparativoRegional}>
               <XAxis dataKey="mes" stroke="#6b7280" fontSize={12} tickLine={false} axisLine={false} />
               <YAxis hide />
-              <Tooltip contentStyle={{ background: '#1e293b', border: '1px solid #263248', borderRadius: 8 }} />
+              <Tooltip contentStyle={{ background: '#212121', border: '1px solid #2c2c2c', borderRadius: 8 }} />
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <Bar dataKey="curitiba" name="Curitiba" fill="#22c55e" radius={[4, 4, 0, 0]} />
               <Bar dataKey="pontaGrossa" name="Ponta Grossa" fill="#475569" radius={[4, 4, 0, 0]} />

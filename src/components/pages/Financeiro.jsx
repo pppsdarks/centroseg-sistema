@@ -1,5 +1,7 @@
 import MetricCard from '../common/MetricCard';
+import AccessGate from '../common/AccessGate';
 import { financeiroData } from '../../data/mockData';
+import { useAuth } from '../../context/AuthContext';
 
 const STATUS_CLASS = {
   Notificado: 'badge--warning',
@@ -7,7 +9,23 @@ const STATUS_CLASS = {
 };
 
 export default function Financeiro() {
+  const { hasFinanceiroAccess } = useAuth();
   const { kpis, faturamentoPorLinha, faturasEmAtraso } = financeiroData;
+
+  if (!hasFinanceiroAccess) {
+    return (
+      <div>
+        <div className="page-header">
+          <div className="eyebrow">Financeiro</div>
+          <h1>Resultados Financeiros &amp; Cobrança</h1>
+        </div>
+        <AccessGate
+          title="Acesso Restrito"
+          description="Os dados financeiros são visíveis apenas para o setor Financeiro e sócios. Insira o código de acesso para continuar."
+        />
+      </div>
+    );
+  }
 
   return (
     <div>

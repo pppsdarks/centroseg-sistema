@@ -3,7 +3,7 @@ import MetricCard from '../common/MetricCard';
 import Table from '../common/Table';
 import { contratosData } from '../../data/mockData';
 
-const TYPE_COLORS = ['#22c55e', '#0ea5e9', '#fbbf24', '#94a3b8'];
+const TYPE_COLORS = ['#22c55e', '#9ca3af', '#fbbf24', '#6b7280'];
 
 const COLUMNS = [
   { key: 'cliente', label: 'Cliente' },

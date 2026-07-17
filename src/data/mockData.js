@@ -235,6 +235,60 @@ export const graficosData = {
   ],
 };
 
+export const marketingData = {
+  kpis: {
+    sessoes: '38.240',
+    sessoes_delta: '+9.4%',
+    conversoes: '612',
+    conversoes_delta: '+14.1%',
+    investimento_total: 'R$ 22.480',
+    investimento_delta: '+5.2%',
+    cpl: 'R$ 36,70',
+    cpl_delta: '-6.8%',
+    roas: '4.8x',
+    roas_delta: '+0.6',
+    taxa_conversao: '1.6%',
+    taxa_conversao_delta: '+0.2pp',
+  },
+  sessoesPorSemana: [
+    { semana: 'S1', sessoes: 7800 },
+    { semana: 'S2', sessoes: 8100 },
+    { semana: 'S3', sessoes: 8900 },
+    { semana: 'S4', sessoes: 8420 },
+    { semana: 'S5', sessoes: 9600 },
+  ],
+  origemTrafego: [
+    { canal: 'Meta Ads', percentual: 34 },
+    { canal: 'Google Ads', percentual: 28 },
+    { canal: 'Orgânico', percentual: 22 },
+    { canal: 'Direto', percentual: 10 },
+    { canal: 'Indicação', percentual: 6 },
+  ],
+  campanhas: [
+    { nome: 'Segurança Patrimonial - Curitiba', plataforma: 'Meta Ads', investimento: 'R$ 6.200', cliques: 4180, conversoes: 142, cpl: 'R$ 43,66', status: 'Ativo' },
+    { nome: 'Monitoramento CFTV - Busca', plataforma: 'Google Ads', investimento: 'R$ 5.400', cliques: 2960, conversoes: 118, cpl: 'R$ 45,76', status: 'Ativo' },
+    { nome: 'Remarketing - Orçamento', plataforma: 'Meta Ads', investimento: 'R$ 3.100', cliques: 3320, conversoes: 165, cpl: 'R$ 18,79', status: 'Ativo' },
+    { nome: 'Alarme Residencial - Display', plataforma: 'Google Ads', investimento: 'R$ 2.780', cliques: 1740, conversoes: 61, cpl: 'R$ 45,57', status: 'Pausado' },
+    { nome: 'Condomínios - Leads', plataforma: 'Meta Ads', investimento: 'R$ 5.000', cliques: 3860, conversoes: 126, cpl: 'R$ 39,68', status: 'Ativo' },
+  ],
+  eventosGTM: [
+    { evento: 'Clique no WhatsApp', contagem: '1.842', variacao: '+11%' },
+    { evento: 'Envio Formulário de Orçamento', contagem: '612', variacao: '+14%' },
+    { evento: 'Clique em Ligar', contagem: '389', variacao: '+4%' },
+    { evento: 'Scroll 90% - Landing Page', contagem: '9.140', variacao: '+7%' },
+  ],
+  mapaClientes: [
+    { nome: 'Condomínio Edifício Solar', cidade: 'Curitiba', lat: -25.4284, lng: -49.2733, status: 'Ativo' },
+    { nome: 'Supermercados Rossi Ltda', cidade: 'Curitiba', lat: -25.4478, lng: -49.2731, status: 'Ativo' },
+    { nome: 'Hospital São Lucas', cidade: 'Curitiba', lat: -25.4025, lng: -49.2648, status: 'Inativo' },
+    { nome: 'Indústrias MetalMec', cidade: 'Ponta Grossa', lat: -25.0916, lng: -50.1668, status: 'Ativo' },
+    { nome: 'Colégio Anglo Curitiba', cidade: 'Curitiba', lat: -25.4544, lng: -49.2921, status: 'Ativo' },
+    { nome: 'Shopping Curitiba', cidade: 'Curitiba', lat: -25.4372, lng: -49.2695, status: 'Ativo' },
+    { nome: 'Centro Distribuição Sul', cidade: 'Ponta Grossa', lat: -25.1046, lng: -50.1592, status: 'Ativo' },
+    { nome: 'Mercado Alvorada', cidade: 'Ponta Grossa', lat: -25.0805, lng: -50.1435, status: 'Risco' },
+  ],
+};
+
 export const currentUser = {
   nome: 'Roberto Silva',
   cargo: 'Diretor Regional',
