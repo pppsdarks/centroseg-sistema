@@ -1,14 +1,24 @@
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import {
+  GridIcon,
+  TrendingUpIcon,
+  MegaphoneIcon,
+  FileTextIcon,
+  ShieldIcon,
+  DollarIcon,
+  BarChartIcon,
+  LockIcon,
+} from '../common/icons';
 
 const NAV_ITEMS = [
-  { to: '/dashboard', label: 'Visão Geral', icon: '⊞' },
-  { to: '/comercial', label: 'Comercial', icon: '📈' },
-  { to: '/marketing', label: 'Marketing', icon: '📣' },
-  { to: '/clientes', label: 'Clientes e Contratos', icon: '📄' },
-  { to: '/operacional', label: 'Operacional', icon: '🛡' },
-  { to: '/financeiro', label: 'Financeiro', icon: '$', gated: true },
-  { to: '/relatorios', label: 'Relatórios', icon: '📊' },
+  { to: '/dashboard', label: 'Visão Geral', icon: GridIcon },
+  { to: '/comercial', label: 'Comercial', icon: TrendingUpIcon },
+  { to: '/marketing', label: 'Marketing', icon: MegaphoneIcon },
+  { to: '/clientes', label: 'Clientes e Contratos', icon: FileTextIcon },
+  { to: '/operacional', label: 'Operacional', icon: ShieldIcon },
+  { to: '/financeiro', label: 'Financeiro', icon: DollarIcon, gated: true },
+  { to: '/relatorios', label: 'Relatórios', icon: BarChartIcon },
 ];
 
 export default function Sidebar({ open, onClose }) {
@@ -20,17 +30,26 @@ export default function Sidebar({ open, onClose }) {
         ✕
       </button>
       <nav className="app-sidebar-nav">
-        {NAV_ITEMS.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) => `sidebar-link ${isActive ? 'sidebar-link--active' : ''}`}
-          >
-            <span className="sidebar-link-icon">{item.icon}</span>
-            {item.label}
-            {item.gated && !hasFinanceiroAccess && <span className="sidebar-link-lock">🔒</span>}
-          </NavLink>
-        ))}
+        {NAV_ITEMS.map((item) => {
+          const Icon = item.icon;
+          return (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) => `sidebar-link ${isActive ? 'sidebar-link--active' : ''}`}
+            >
+              <span className="sidebar-link-icon">
+                <Icon />
+              </span>
+              {item.label}
+              {item.gated && !hasFinanceiroAccess && (
+                <span className="sidebar-link-lock">
+                  <LockIcon />
+                </span>
+              )}
+            </NavLink>
+          );
+        })}
       </nav>
 
       <div className="sidebar-status card">
